@@ -1,0 +1,55 @@
+﻿@model Company.Models.File
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>File</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.OrderNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <a href="~/Uploads/@Html.DisplayFor(model=>model.Image)" download="photo">
+                <img src="~/Uploads/@Html.DisplayFor(model=>model.Image)"
+                     class="thumbnail" style="width:250px;height:300px;" />
+
+            </a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,24 @@
+﻿@*@model IEnumerable<Company.Models.Orders>*@
+
+
+    @{
+        ViewBag.Title = "OrdersSearch";
+        Layout = "~/Views/Shared/_MainLayout.cshtml";
+    }
+
+    <h2>بحث عن طلبية</h2>
+
+    <div>
+
+        @using (Html.BeginForm("Search","Home",FormMethod.Post))
+         {
+        <input type="text" name="search" id="searchName" placeholder="ابحث هنا.." />
+         }
+
+        
+
+
+    </div>
+
+
+

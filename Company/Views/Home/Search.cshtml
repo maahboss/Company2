@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Company.Models.Orders>
+
+@*<meta name="viewport" content="width=device-width,intial scale=1" />*@
+
+
+<br /><br />
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    @Html.TextBox("searching")<input type="submit" value="Search"/>
+    @*<input type="text" name="searching" id="searching" placeholder="ابحث هنا.." value="#####" />*@
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Order No</th>
+            <th>Order Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="3" style="color:red">
+                    No Match
+                    
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div class="panel panel-default" style="padding:15px;background-color:burlywood;">
+                    <h3 class="panel panel-heading" style="background-color:coral;">
+                        اسم الشركة : @item.Exporter.Name <br /> رقم الطلبية : @item.OrderNo <br /> ملاحظة : @item.Note <br />
+
+                        <a href="~/Orders/Edit/@item.Id">
+                            <input type="submit" value="تعديل بيانات الطلبية" />
+                        </a>
+
+                        <a href="~/Files/Create">
+                            <input type="submit" value="اضافة فاتورة او ملف جديد" />
+                        </a>
+
+
+                    </h3>
+
+                    <div class="row">
+                        @foreach (var subitem in item.File)
+                        {
+                            <div class="col-md-2 thumbnail" style="margin-left:20px;margin-bottom:30px;height:10%;width:10% ;background-color:beige;">
+                                <a href="~/Uploads/@subitem.Image" download="photo">
+                                    <img src="~/Uploads/@subitem.Image" />
+
+                                </a>
+                                <h4>@Html.DisplayFor(modelitem => subitem.ImageType)</h4>
+                                <h5>@Html.DisplayFor(modelitem => subitem.Note)</h5>
+
+                                <a href="~/Files/Edit/@subitem.Id">
+                                    <input type="submit" value="تعديل" />
+                                </a>
+                                <a href="~/Files/Details/@subitem.Id">
+                                    <input type="submit" value="تفاصيل" />
+                                </a>
+                                <a href="~/Files/Delete/@subitem.Id">
+                                    <input type="submit" value="حذف" />
+                                </a>
+
+
+
+
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+        }
+    </tbody>
+</table>
+

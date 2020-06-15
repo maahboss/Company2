@@ -1,0 +1,95 @@
+﻿
+@model IEnumerable<Company.Models.Exporter>
+
+@{
+    ViewBag.Title = "ListComFiles";
+}
+
+<div>
+    <!-- Carousel
+    ================================================== -->
+    @*<div id="myCarousel" class="carousel slide">*@
+    <!-- Indicators -->
+    @*<ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/images/1.png" class="img-responsive">
+
+            </div>
+            <div class="item">
+                <img src="~/images/2.png" class="img-responsive">
+
+            </div>
+            <div class="item">
+                <img src="~/images/3.png" class="img-responsive">
+
+            </div>
+        </div>*@
+    <!-- Controls -->
+    @*<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        </div>*@
+    <!-- /.carousel -->
+</div>
+
+
+<div class="myhome">
+    <h1>شركة شاكر حرب</h1>
+    <p class="lead">عرض جميع ملفات الشركات</p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default" style="padding:15px;background-color:burlywood;">
+        <h2 class="panel panel-heading" style="background-color:coral;"> اسم الشركة : @Html.DisplayFor(modelitem => item.Name)</h2>
+        <div  class="row">
+
+            @foreach (var subitem in item.Order)
+            {
+                <div class="panel panel-default" style="padding:15px;background-color:khaki;">
+                    <h3> رقم الطلبية : @Html.DisplayFor(modelitem => subitem.OrderNo)</h3>
+                    <h4> السنة : @Html.DisplayFor(modelitem => subitem.Year)</h4>
+                    <h4> ملاحظة : @Html.DisplayFor(modelitem => subitem.Note)</h4>
+
+
+                    <div class="row">
+
+                        @foreach (var subsubitem in subitem.File)
+                        {
+
+                            <div class="col-md-2 thumbnail" style="margin-left:20px;margin-bottom:30px;height:300px;background-color:beige;">
+
+                                <a href="~/Uploads/@subsubitem.Image" download="photo">
+                                    <img src="~/Uploads/@subsubitem.Image" />
+
+                                </a>
+                                <h4>@Html.DisplayFor(modelitem => subsubitem.ImageType)</h4>
+                                <h5>@Html.DisplayFor(modelitem => subsubitem.Note)</h5>
+                                <button class="btn btn-default">التفاصيل</button>
+
+                            </div>
+
+
+
+
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+
+@*<button id="hide">Hide</button>
+<button id="show">Show</button>*@

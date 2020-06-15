@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "MainMenu";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>القائمة الرئيسية</h2>
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+        $("#flip").hover(function () {
+            $("#panel").slideToggle("slow").css({ "left": "-450px" }).animate({ left: 0 }, 300);
+            
+        }
+            , function () {
+                $("#panel").animate({ left: 450 }, 300);
+
+            }
+
+        );
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#flip1").hover(function () {
+            $("#panel1").slideToggle("slow").css({ "left": "-450px" }).animate({ left: 0 }, 300);
+        }
+            , function () {
+                $("#panel1").animate({ left: 450 }, 300);
+
+            }
+
+        );
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#flip2").hover(function () {
+            $("#panel2").slideToggle("slow").css({ "left": "-450px" }).animate({ left: 0 }, 300);
+        }
+            , function () {
+                $("#panel2").animate({ left: 450 }, 300);
+
+            }
+
+        );
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#flip3").hover(function () {
+            $("#panel3").slideToggle("slow").css({ "left": "-450px" }).animate({ left: 0 }, 300);
+        }
+            , function () {
+                $("#panel3").animate({ left: 450 }, 300);
+
+            }
+
+        );
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#flip4").hover(function () {
+            $("#panel4").slideToggle("slow").css({ "left": "-450px" }).animate({ left: 0 }, 300);
+        }
+            , function () {
+                $("#panel4").animate({ left: 450 }, 300);
+
+            }
+
+        );
+    });
+</script>
+
+
+
+<div class="panel panel-default" style="height:350px;border:solid;border-radius:10px;">
+    <div class="row">
+        <div class="col-md-3">
+
+            <h4 id="flip">قائمة المستخدمين</h4>
+            <a href="~/Account/EditProfile">
+                <h5 id="panel">تعديل المستخدم</h5>
+            </a>
+            
+        </div>
+
+        <div class="col-md-3">
+            <h4 id="flip1">قائمة الشركات</h4>
+            <a href="~/Exporters/Index">
+                <h5 id="panel1">ادارة الشركات او الملفات (شركة جديدة - تعديل-حذف-تفاصيل)</h5>
+            </a>
+
+
+        </div>
+
+        <div class="col-md-3">
+            <h4 id="flip2">قائمة الطلبيات</h4>
+            <a href="~/Orders/Index">
+                <h5 id="panel2">ادارة الطلبيات (طلبية جديدة-تعديل-حذف تفاصيل)</h5>
+            </a>
+
+        </div>
+
+        <div class="col-md-3">
+            <h4 id="flip3">قائمة الملفات</h4>
+            <a href="~/Files/Index">
+                <h5 id="panel3">ادارة ملفات الطلبيات(ملف جديد-تعديل-حذف-تفاصيل)</h5>
+            </a>
+
+        </div>
+        <br/><br /><br /><br /><br /><br /><br /><br /><br />
+        <div class="col-md-3">
+            <h4 id="flip4">قائمة البحث</h4>
+            <a href="~/Home/Search">
+                <h5 id="panel4">ادارة ملفات الطلبيات(ملف جديد-تعديل-حذف-تفاصيل)</h5>
+            </a>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,intial scale=1" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div>
+        <!----Navbar-->
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">
+                        <img src="~/images/logo.png" class="logo-size" />
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapsed">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>
+                                الرئيسية
+                            </a>
+                        </li>
+
+
+                        @*DropDown Hover nemu*@
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                                العروض
+
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">العرض الاول</a></li>
+                                <li><a href="#">العرض الثاني</a></li>
+                                <li><a href="#">العرض الثالث</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="~/Account/Register">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                مستخدم جديد
+                            </a>
+                        </li>
+
+                        @*End *@
+
+                        @*<li>
+            <a href="#">
+                <i class="glyphicon glyphicon-info-sign"></i>
+                حول الموقع
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="glyphicon glyphicon-envelope"></i>
+                اتصل بنا
+            </a>
+        </li>*@
+                    </ul>
+
+                    <!----partial login-->
+                    @Html.Partial("_Login")
+
+                </div>
+            </div>
+
+        </nav>
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+
+
+
+        <!---footer-->
+        <footer class="myfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            من نحن؟
+                        </h4>
+                        <p>
+                            شركة شاكر خليل حرب لاستيراد المواد الغذائية المجمدة
+                        </p>
+                        <p>We are harb</p>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>
+                            <i class="glyphicon glyphicon-globe"></i>
+                            تواصل معنا
+                        </h4>
+                        <ul>
+                            <li><a href="#"> صفحتنا على الفيس بوك </a></li>
+                            <li><a href="#"> تابعنا على تويتر </a></li>
+                            <li><a href="#"> شاهدنا على يوتيوب </a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>
+                            <i class="glyphicon glyphicon-earphone"></i>
+                            اتصل بنا
+                        </h4>
+                        <ul>
+                            <li>ايميل : import@harbson.com</li>
+                            <li>تلفون: 0828</li>
+                            <li>فاكس : 0828</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="subfooter">
+                <span>جميع الحقوق محفوظة 2018</span>
+            </div>
+        </footer>
+
+
+
+
+        <script src="~/Scripts/jquery.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/popper.js"></script>
+        @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        @*<script>
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("#div1").fadeOut();
+                    
+                });
+            });
+        </script>*@
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</body >
+</html >
